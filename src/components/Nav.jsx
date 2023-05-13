@@ -4,17 +4,16 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <>
-      <nav>
-        <div className="logo">
-          <Link to="/">#VANLIFE</Link>
-        </div>
-        <div className="ul links">
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>Vans</li>
-        </div>
-      </nav>
+      <header>
+        <Link className="site-logo" to="/">
+          #VANLIFE
+        </Link>
+
+        <nav>
+          <Link to="/about">About</Link>
+          <Link to="/vans">Vans</Link>
+        </nav>
+      </header>
     </>
   );
 }
