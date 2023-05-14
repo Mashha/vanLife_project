@@ -9,6 +9,7 @@ import Layout from "./components/Layout";
 import Dashboard from "./components/host/Dashboard";
 import Income from "./components/host/Income";
 import Reviews from "./components/host/Reviews";
+import HostLayout from "./components/host/HostLayout";
 
 function App() {
   return (
@@ -19,11 +20,11 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanDetail />} />
-          
-          <Route path="/host" element={<Dashboard />} />
-          <Route path="/host/income" element={<Income />} />
-          <Route path="/host/reviews" element={<Reviews />} />
 
+          <Route path="/host" element={<HostLayout />}>
+            <Route path="/host/income" element={<Income />} />
+            <Route path="/host/reviews" element={<Reviews />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
