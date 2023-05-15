@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function HostVanDetail() {
   const params = useParams();
@@ -17,6 +18,9 @@ function HostVanDetail() {
 
   return (
     <>
+      <Link to=".." relative="path" className="back-button">
+        &larr; <span>Back to all vans</span>
+      </Link>
       <div className="host-van-detail-layout-container">
         <div className="host-van-detail">
           <img src={currentVan.imageUrl} />
@@ -28,6 +32,7 @@ function HostVanDetail() {
             <h4>${currentVan.price}/day</h4>
           </div>
         </div>
+        <Outlet />
       </div>
     </>
   );
