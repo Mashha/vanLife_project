@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Outlet, useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { NavLink, Outlet, useParams, Link, useOutletContext } from "react-router-dom";
 
 function HostVanDetail() {
   const params = useParams();
@@ -59,7 +58,7 @@ function HostVanDetail() {
             Photos
           </NavLink>
         </nav>
-        <Outlet />
+        <Outlet context={{currentVan}}/>
       </div>
     </>
   );
