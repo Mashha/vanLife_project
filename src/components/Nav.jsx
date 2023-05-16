@@ -2,6 +2,11 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
 function Nav() {
+  const activeStyles = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "#161616",
+  };
   return (
     <>
       <header>
@@ -12,19 +17,19 @@ function Nav() {
         <nav>
           <NavLink
             to="/host"
-            className={({ isActive }) => (isActive ? "active" : "")}
+            style={({ isActive }) => (isActive ? activeStyles : null)}
           >
             Host
           </NavLink>
           <NavLink
             to="/about"
-            className={({ isActive }) => (isActive ? "active" : "")}
+            style={({ isActive }) => (isActive ? activeStyles : null)}
           >
             About
           </NavLink>
           <NavLink
             to="/vans"
-            className={({ isActive }) => (isActive ? "active" : "")}
+            style={({ isActive }) => (isActive ? activeStyles : null)}
           >
             Vans
           </NavLink>
