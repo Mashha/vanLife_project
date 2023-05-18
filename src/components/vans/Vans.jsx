@@ -13,11 +13,15 @@ function Vans() {
       .then((data) => setVansData(data.vans));
   }, []);
 
+  const filtered = typeFilter
+    ? vansData.filter((van) => van.type === typeFilter)
+    : vansData;
+
   return (
     <div className="van-list-container">
       <h1>Explore our van options</h1>
       <div className="van-list">
-        {vansData.map((van) => (
+        {filtered.map((van) => (
           <Link to={`/vans/${van.id}`}>
             <div key={van.id} className="van-tile">
               <img src={van.imageUrl} alt="" />
